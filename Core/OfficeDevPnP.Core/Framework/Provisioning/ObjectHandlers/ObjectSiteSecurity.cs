@@ -8,6 +8,7 @@ using OfficeDevPnP.Core.Diagnostics;
 using Microsoft.SharePoint.Client.Utilities;
 using OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers.TokenDefinitions;
 using RoleDefinition = Microsoft.SharePoint.Client.RoleDefinition;
+using System.Web;
 
 namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers
 {
@@ -95,10 +96,10 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers
                     string parsedGroupDescription = parser.ParseString(siteGroup.Description);
                     bool descriptionHasHtml = HttpUtility.HtmlEncode(parsedGroupDescription) != parsedGroupDescription;
 
-                    if (!web.GroupExists(parsedGroupTitle))
+                    if (!SecurityExtensions.GroupExists( web, parsedGroupTitle))
                     {
                         scope.LogDebug("Creating group {0}", parsedGroupTitle);
-                        group = web.AddGroup(
+                        group = SecurityExtensions.AddGroup(web,
                             parsedGroupTitle,
                             parsedGroupDescription,
                             parsedGroupTitle == parsedGroupOwner);

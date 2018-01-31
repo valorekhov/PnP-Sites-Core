@@ -1339,9 +1339,9 @@ namespace OfficeDevPnP.Core.Pages
 
         private void Context_ExecutingWebRequest(object sender, WebRequestEventArgs e)
         {
-            if (!String.IsNullOrEmpty(e.WebRequestExecutor.RequestHeaders.Get("Authorization")))
+            if (!String.IsNullOrEmpty(e.WebRequest.Headers.Get("Authorization")))
             {
-                this.accessToken = e.WebRequestExecutor.RequestHeaders.Get("Authorization").Replace("Bearer ", "");
+                this.accessToken = e.WebRequest.Headers.Get("Authorization").Replace("Bearer ", "");
             }
         }
         #endregion

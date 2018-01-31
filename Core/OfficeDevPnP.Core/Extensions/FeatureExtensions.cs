@@ -108,7 +108,7 @@ namespace Microsoft.SharePoint.Client
                 }
                 features.Context.ClientTag = clientTag;
                 // Don't update this to ExecuteQueryRetry
-                features.Context.ExecuteQuery();
+                features.Context.ExecuteQueryAsync().RunSynchronously();
             }
             else
             {
@@ -181,7 +181,7 @@ namespace Microsoft.SharePoint.Client
                     }
                     features.Context.ClientTag = clientTag;
                     // Don't update this to ExecuteQueryRetry
-                    features.Context.ExecuteQuery();
+                    features.Context.ExecuteQueryAsync().RunSynchronously();
                     Log.Info(Constants.LOGGING_SOURCE, CoreResources.FeatureExtensions_ProcessFeatureInternal_FeatureActive, featureID);
                 }
                 catch (Exception ex)

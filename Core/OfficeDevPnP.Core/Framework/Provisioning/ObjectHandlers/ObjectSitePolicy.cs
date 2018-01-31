@@ -2,6 +2,7 @@
 using OfficeDevPnP.Core.Framework.Provisioning.Model;
 using OfficeDevPnP.Core.Utilities;
 using OfficeDevPnP.Core.Diagnostics;
+using System;
 
 namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers
 {
@@ -17,9 +18,11 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers
             {
                 if (template.SitePolicy != null)
                 {
-                    if (web.GetSitePolicyByName(template.SitePolicy) != null) // Site Policy Available?
+                    throw new NotImplementedException();
+                    if (false) //web.GetSitePolicyByName(template.SitePolicy) != null) // Site Policy Available?
                     {
-                        web.ApplySitePolicy(template.SitePolicy);
+                        throw new NotImplementedException();
+                        //web.ApplySitePolicy(template.SitePolicy);
                         scope.LogInfo(CoreResources.Provisioning_ObjectHandlers_SitePolicy_PolicyAdded, template.SitePolicy);
                     }
                     else
@@ -35,7 +38,8 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers
         {
             using (var scope = new PnPMonitoredScope(this.Name))
             {
-                var sitePolicyEntity = web.GetAppliedSitePolicy();
+                throw new NotImplementedException();
+                ObjectSitePolicy sitePolicyEntity = null; // web.GetAppliedSitePolicy();
 
                 if (sitePolicyEntity != null)
                 {
@@ -59,9 +63,9 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers
         {
             if (!_willExtract.HasValue)
             {
-                var sitePolicyEntity = web.GetAppliedSitePolicy();
-
-                _willExtract = sitePolicyEntity != null;
+                throw new NotImplementedException();
+                //var sitePolicyEntity = web.GetAppliedSitePolicy();
+                //_willExtract = sitePolicyEntity != null;
             }
             return _willExtract.Value;
         }

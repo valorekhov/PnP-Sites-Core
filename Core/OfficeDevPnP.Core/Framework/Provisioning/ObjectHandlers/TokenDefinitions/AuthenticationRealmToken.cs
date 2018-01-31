@@ -15,7 +15,7 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers.TokenDefinitio
         }
         public override string GetReplaceValue()
         {
-            return Web.GetAuthenticationRealm().ToString();
+            return SecurityExtensions.GetAuthenticationRealm(Web).ToString();
         }
     }
 }

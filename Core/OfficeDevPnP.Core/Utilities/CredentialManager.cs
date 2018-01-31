@@ -5,6 +5,7 @@ using System.Security;
 using Microsoft.SharePoint.Client;
 using Microsoft.Win32.SafeHandles;
 using FILETIME = System.Runtime.InteropServices.ComTypes.FILETIME;
+using OfficeDevPnP.Core.NetStandard2.Utilities;
 
 namespace OfficeDevPnP.Core.Utilities
 {
@@ -26,7 +27,7 @@ namespace OfficeDevPnP.Core.Utilities
             {
                 return null;
             }
-            return new SharePointOnlineCredentials(networkCredential.UserName, networkCredential.SecurePassword);
+            return new SharePointOnlineCredentials(networkCredential.UserName, networkCredential.SecurePassword.ConvertToUnsecureString());
         }
 
         /// <summary>

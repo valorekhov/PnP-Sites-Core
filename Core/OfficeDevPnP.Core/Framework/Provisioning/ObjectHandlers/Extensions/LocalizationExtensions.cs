@@ -74,14 +74,14 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers.Extensions
                         {
                             // Save property with correct locale on the request to make it stick
                             // http://sadomovalex.blogspot.no/2015/09/localize-web-part-titles-via-client.html
-                            context.PendingRequest.RequestExecutor.WebRequest.Headers["Accept-Language"] = resourceValue.Item1;
+                            context.PendingRequest.WebRequest.Headers["Accept-Language"] = resourceValue.Item1;
                             partOnPage.WebPart.Properties["Title"] = resourceValue.Item2;
                             partOnPage.SaveWebPartChanges();
                             context.ExecuteQueryRetry();
                         }
                     }
                 }
-                context.PendingRequest.RequestExecutor.WebRequest.Headers.Remove("Accept-Language");
+                context.PendingRequest.WebRequest.Headers.Remove("Accept-Language");
             }
             else
             {
@@ -100,7 +100,7 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers.Extensions
                 {
                     // Save property with correct locale on the request to make it stick
                     // http://sadomovalex.blogspot.no/2015/09/localize-web-part-titles-via-client.html
-                    context.PendingRequest.RequestExecutor.WebRequest.Headers["Accept-Language"] = resourceValue.Item1;
+                    context.PendingRequest.WebRequest.Headers["Accept-Language"] = resourceValue.Item1;
                     view.Title = resourceValue.Item2;
                     view.Update();
                     context.ExecuteQueryRetry();
@@ -123,7 +123,7 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers.Extensions
                 {
                     // Save property with correct locale on the request to make it stick
                     // http://sadomovalex.blogspot.no/2015/09/localize-web-part-titles-via-client.html
-                    context.PendingRequest.RequestExecutor.WebRequest.Headers["Accept-Language"] = resourceValue.Item1;
+                    context.PendingRequest.WebRequest.Headers["Accept-Language"] = resourceValue.Item1;
                     navigationNode.Title = resourceValue.Item2;
                     navigationNode.Update();
                     context.ExecuteQueryRetry();

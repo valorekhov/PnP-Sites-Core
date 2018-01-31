@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="IdentityModel\**" />
     <Compile Remove="Web References\**" />
+    <EmbeddedResource Remove="IdentityModel\**" />
     <EmbeddedResource Remove="Web References\**" />
+    <None Remove="IdentityModel\**" />
     <None Remove="Web References\**" />
   </ItemGroup>
 
@@ -17,16 +20,9 @@
     <Compile Remove="Extensions\Deprecated\SecurityExtensions.deprecated.cs" />
     <Compile Remove="Extensions\Deprecated\TenantExtensions.deprecated.cs" />
     <Compile Remove="Extensions\InformationManagementExtensions.cs" />
-    <Compile Remove="Extensions\SecurityExtensions.cs" />
     <Compile Remove="Extensions\TenantExtensions.cs" />
-    <Compile Remove="Framework\TimerJobs\TimerJob.cs" />
-    <Compile Remove="IdentityModel\TokenProviders\ADFS\BaseProvider.cs" />
-    <Compile Remove="IdentityModel\TokenProviders\ADFS\CertificateMixed.cs" />
-    <Compile Remove="IdentityModel\TokenProviders\ADFS\UsernameMixed.cs" />
     <Compile Remove="Properties\AssemblyInfo.cs" />
     <Compile Remove="Utilities\TokenHelper.cs" />
-    <Compile Remove="WebAPI\WebAPIContextFilterAttribute.cs" />
-    <Compile Remove="WebAPI\WebAPIHelper.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -103,22 +99,14 @@
     <None Include="Extensions\Deprecated\InformationManagementExtensions.deprecated.cs" />
     <None Include="Extensions\Deprecated\SecurityExtensions.deprecated.cs" />
     <None Include="Extensions\InformationManagementExtensions.cs" />
-    <None Include="Extensions\SecurityExtensions.cs" />
     <None Include="Extensions\TenantExtensions.cs" />
-    <None Include="Framework\TimerJobs\TimerJob.cs" />
-    <None Include="IdentityModel\TokenProviders\ADFS\BaseProvider.cs" />
-    <None Include="IdentityModel\TokenProviders\ADFS\CertificateMixed.cs" />
-    <None Include="IdentityModel\TokenProviders\ADFS\UsernameMixed.cs" />
     <None Include="Properties\AssemblyInfo.cs" />
     <None Include="Utilities\TokenHelper.cs" />
-    <None Include="WebAPI\WebAPIContextFilterAttribute.cs" />
-    <None Include="WebAPI\WebAPIHelper.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AngleSharp" Version="0.9.9.1" />
     <PackageReference Include="Microsoft.Graph" Version="1.7.0" />
-    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="2.29.0" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="SharePointPnP.IdentityModel.Extensions" Version="1.2.3" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0-preview1-25914-04" />

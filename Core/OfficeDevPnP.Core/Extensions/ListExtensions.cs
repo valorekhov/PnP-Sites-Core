@@ -1155,7 +1155,7 @@ namespace Microsoft.SharePoint.Client
                     }
                 case BuiltInIdentity.EveryoneButExternalUsers:
                     {
-                        string userIdentity = $"c:0-.f|rolemanager|spo-grid-all-users/{web.GetAuthenticationRealm()}";
+                        string userIdentity = $"c:0-.f|rolemanager|spo-grid-all-users/{SecurityExtensions.GetAuthenticationRealm(web)}";
                         permissionEntity = web.EnsureUser(userIdentity);
                         break;
                     }

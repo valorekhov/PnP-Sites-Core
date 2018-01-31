@@ -319,7 +319,7 @@ namespace Microsoft.SharePoint.Client
 
         #endregion
 
-#if !ONPREMISES
+#if false && !ONPREMISES
 #region External sharing management
         /// <summary>
         /// Get the external sharing settings for the provided site. Only works in Office 365 Multi-Tenant
@@ -1173,9 +1173,9 @@ namespace Microsoft.SharePoint.Client
         {
             web.EnsureProperty(w => w.Url);
 
-            var returnGuid = new Guid(TokenHelper.GetRealmFromTargetUrl(new Uri(web.Url)));
-
-            return returnGuid;
+            throw new NotImplementedException();
+            //var returnGuid = new Guid(TokenHelper.GetRealmFromTargetUrl(new Uri(web.Url)));
+            //return returnGuid;
 
         }
 #endregion

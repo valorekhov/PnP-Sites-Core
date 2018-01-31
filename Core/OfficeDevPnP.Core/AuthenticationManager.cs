@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 //using System.Windows.Forms;
-using Microsoft.IdentityModel.Clients.ActiveDirectory;
+//using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Microsoft.SharePoint.Client;
 //using OfficeDevPnP.Core.IdentityModel.TokenProviders.ADFS;
 using OfficeDevPnP.Core.Diagnostics;

@@ -238,9 +238,7 @@ namespace OfficeDevPnP.Core.Framework.Graph
                     {
                         throw new ApplicationException(
                             String.Format("Exception while invoking endpoint {0}.", requestUrl),
-                            new HttpException(
-                                (Int32)response.StatusCode,
-                                response.Content.ReadAsStringAsync().Result));
+                            new Exception(response.Content.ReadAsStringAsync().Result));
                     }
                 }
             }

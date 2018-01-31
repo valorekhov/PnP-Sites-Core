@@ -114,7 +114,7 @@ namespace Microsoft.SharePoint.Client
                     EventHandler<WebRequestEventArgs> appDecorationHandler = (s, e) =>
                     {
                         bool overrideUserAgent = true;
-                        var existingUserAgent = e.WebRequestExecutor.WebRequest.UserAgent;
+                        var existingUserAgent = e.WebRequest.UserAgent;
                         if (!string.IsNullOrEmpty(existingUserAgent) && existingUserAgent.StartsWith("NONISV|SharePointPnP|PnPPS/"))
                         {
                             overrideUserAgent = false;
@@ -125,7 +125,7 @@ namespace Microsoft.SharePoint.Client
                             {
                                 userAgent = userAgentFromConfig;
                             }
-                            e.WebRequestExecutor.WebRequest.UserAgent = string.IsNullOrEmpty(userAgent) ? $"{PnPCoreUtilities.PnPCoreUserAgent}" : userAgent;
+                            e.WebRequest.UserAgent = string.IsNullOrEmpty(userAgent) ? $"{PnPCoreUtilities.PnPCoreUserAgent}" : userAgent;
                         }
                     };
 
@@ -274,7 +274,7 @@ namespace Microsoft.SharePoint.Client
             string accessToken = null;
             EventHandler<WebRequestEventArgs> handler = (s, e) =>
             {
-                string authorization = e.WebRequestExecutor.RequestHeaders["Authorization"];
+                string authorization = e.WebRequest.Headers["Authorization"];
                 if (!string.IsNullOrEmpty(authorization))
                 {
                     accessToken = authorization.Replace("Bearer ", string.Empty);
@@ -450,9 +450,9 @@ namespace Microsoft.SharePoint.Client
 
         private static void Context_ExecutingWebRequest(object sender, WebRequestEventArgs e)
         {
-            if (!String.IsNullOrEmpty(e.WebRequestExecutor.RequestHeaders.Get("Authorization")))
+            if (!String.IsNullOrEmpty(e.WebRequest.Headers.Get("Authorization")))
             {
-                accessToken = e.WebRequestExecutor.RequestHeaders.Get("Authorization").Replace("Bearer ", "");
+                accessToken = e.WebRequest.Headers.Get("Authorization").Replace("Bearer ", "");
             }
         }
 

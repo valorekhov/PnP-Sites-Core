@@ -187,13 +187,15 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers
                     {
                         if (stream != null)
                         {
+                            throw new NotImplementedException();
+                            /*
                             using (ResXResourceReader resxReader = new ResXResourceReader(stream))
                             {
                                 foreach (DictionaryEntry entry in resxReader)
                                 {
                                     resourceEntries.Add(new Tuple<string, uint, string>(entry.Key.ToString(), (uint)localizationEntry.LCID, entry.Value.ToString()));
                                 }
-                            }
+                            }*/
                         }
                     }
                 }

@@ -971,7 +971,8 @@ namespace Microsoft.SharePoint.Client
             using (var uploadContext = folder.Context.Clone(folder.Context.Url))
             {
                 Log.Debug(Constants.LOGGING_SOURCE, "Save binary direct (via webdav) to '{0}'", serverRelativeUrl);
-                File.SaveBinaryDirect(uploadContext, serverRelativeUrl, stream, overwriteIfExists);
+                throw new NotImplementedException();
+                //File.SaveBinaryDirect(uploadContext, serverRelativeUrl, stream, overwriteIfExists);
                 uploadContext.ExecuteQueryRetry();
             }
 

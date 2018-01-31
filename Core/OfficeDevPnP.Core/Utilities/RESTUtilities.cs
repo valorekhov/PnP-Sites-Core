@@ -21,7 +21,8 @@ namespace OfficeDevPnP.Core.Utilities
             if (context.Credentials != null)
             {
                 handler.Credentials = context.Credentials;
-                handler.CookieContainer.SetCookies(new Uri(context.Web.Url), (context.Credentials as SharePointOnlineCredentials).GetAuthenticationCookie(new Uri(context.Web.Url)));
+                throw new NotImplementedException();
+                //handler.CookieContainer.SetCookies(new Uri(context.Web.Url), (context.Credentials as SharePointOnlineCredentials).GetAuthenticationCookie(new Uri(context.Web.Url)));
             }
             else
             {

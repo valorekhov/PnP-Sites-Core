@@ -32,7 +32,9 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers.Extensions
                 if (System.IO.File.Exists(resourceFileName))
                 {
                     // Read existing entries, if any
-                    using (ResXResourceReader resxReader = new ResXResourceReader(resourceFileName))
+                    throw new NotImplementedException();
+                    /*
+                    using (var resxReader = new ResXResourceReader(resourceFileName))
                     {
                         foreach (DictionaryEntry entry in resxReader)
                         {
@@ -43,20 +45,22 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers.Extensions
                                 ResourceTokens.Add(new Tuple<string, int, string>(entry.Key.ToString(), language, entry.Value as string));
                             }
                         }
-                    }
+                    }*/
                 }
 
-            
 
+
+                throw new NotImplementedException();
                 // Create new resource file
-                using (ResXResourceWriter resx = new ResXResourceWriter(resourceFileName))
+                /*
+                using (var resx = new ResXResourceWriter(resourceFileName))
                 {
                     foreach (var token in ResourceTokens.Where(t => t.Item2 == language))
                     {
 
                         resx.AddResource(token.Item1, token.Item3);
                     }
-                }
+                }*/
 
                 template.Localizations.Add(new Localization() { LCID = language, Name = culture.NativeName, ResourceFile = $"{creationInfo.ResourceFilePrefix}.{culture.Name}.resx"});
 
