@@ -8,12 +8,13 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Microsoft.SharePoint.Client;
-using OfficeDevPnP.Core.IdentityModel.TokenProviders.ADFS;
+//using OfficeDevPnP.Core.IdentityModel.TokenProviders.ADFS;
 using OfficeDevPnP.Core.Diagnostics;
 using OfficeDevPnP.Core.Utilities;
+using OfficeDevPnP.Core.NetStandard2.Utilities;
 
 namespace OfficeDevPnP.Core
 {
@@ -28,6 +29,8 @@ namespace OfficeDevPnP.Core
         Germany=3,
         USGovernment=4
     }
+
+    /*
 
     /// <summary>
     /// This manager class can be used to obtain a SharePointContext object
@@ -76,7 +79,7 @@ namespace OfficeDevPnP.Core
 
             if (sharepointOnlineCredentials == null)
             {
-                sharepointOnlineCredentials = new SharePointOnlineCredentials(tenantUser, tenantUserPassword);
+                sharepointOnlineCredentials = new SharePointOnlineCredentials(tenantUser, tenantUserPassword.ConvertToUnsecureString());
             }
 
             var ctx = new ClientContext(siteUrl);
@@ -513,7 +516,8 @@ namespace OfficeDevPnP.Core
                 resourceUri = new Uri(resourceUri.Scheme + "://" + resourceUri.Host + "/");
 
                 String accessToken = accessTokenGetter(resourceUri.ToString());
-                args.WebRequestExecutor.RequestHeaders["Authorization"] = "Bearer " + accessToken;
+                throw new NotImplementedException();
+                //args.WebRequestExecutor.RequestHeaders["Authorization"] = "Bearer " + accessToken;
             };
 
             return clientContext;
@@ -548,9 +552,9 @@ namespace OfficeDevPnP.Core
             }
         }
 
-        private async Task<AuthenticationResult> AcquireNativeApplicationTokenAsync(string authContextUrl, string resourceId)
+        private async Task<Microsoft.IdentityModel.Clients.ActiveDirectory.AuthenticationResult> AcquireNativeApplicationTokenAsync(string authContextUrl, string resourceId)
         {
-            AuthenticationResult ar = null;
+            Microsoft.IdentityModel.Clients.ActiveDirectory.AuthenticationResult ar = null;
 
             try
             {
@@ -841,5 +845,5 @@ namespace OfficeDevPnP.Core
         }
         #endregion
 
-    }
+    }*/
 }

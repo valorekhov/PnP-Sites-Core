@@ -9,7 +9,6 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.UI;
 
 namespace OfficeDevPnP.Core.Pages
 {
@@ -617,7 +616,8 @@ namespace OfficeDevPnP.Core.Pages
         public string ToHtml()
         {
             StringBuilder html = new StringBuilder(100);
-            using (var htmlWriter = new HtmlTextWriter(new System.IO.StringWriter(html), ""))
+            throw new NotImplementedException();
+            /*using (var htmlWriter = new HtmlTextWriter(new System.IO.StringWriter(html), ""))
             {
                 htmlWriter.NewLine = string.Empty;
 
@@ -638,7 +638,7 @@ namespace OfficeDevPnP.Core.Pages
                 }
 
                 htmlWriter.RenderEndTag();
-            }
+            }*/
 
             return html.ToString();
         }
@@ -1518,7 +1518,8 @@ namespace OfficeDevPnP.Core.Pages
         public string ToHtml()
         {
             StringBuilder html = new StringBuilder(100);
-            using (var htmlWriter = new HtmlTextWriter(new System.IO.StringWriter(html), ""))
+            throw new NotImplementedException();
+            /*using (var htmlWriter = new HtmlTextWriter(new System.IO.StringWriter(html), ""))
             {
                 htmlWriter.NewLine = string.Empty;
 
@@ -1526,7 +1527,7 @@ namespace OfficeDevPnP.Core.Pages
                 {
                     htmlWriter.Write(column.ToHtml());
                 }
-            }
+            }*/
 
             return html.ToString();
         }
@@ -1644,7 +1645,8 @@ namespace OfficeDevPnP.Core.Pages
         public string ToHtml()
         {
             StringBuilder html = new StringBuilder(100);
-            using (var htmlWriter = new HtmlTextWriter(new System.IO.StringWriter(html), ""))
+            throw new NotImplementedException();
+            /*using (var htmlWriter = new HtmlTextWriter(new System.IO.StringWriter(html), ""))
             {
                 htmlWriter.NewLine = string.Empty;
 
@@ -1681,7 +1683,7 @@ namespace OfficeDevPnP.Core.Pages
                     htmlWriter.RenderBeginTag(HtmlTextWriterTag.Div);
                     htmlWriter.RenderEndTag();
                 }
-            }
+            }*/
 
             return html.ToString();
         }

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Threading;
-using System.Web;
 using OfficeDevPnP.Core;
 using OfficeDevPnP.Core.Diagnostics;
 using OfficeDevPnP.Core.Utilities;
@@ -12,7 +11,7 @@ using System.Configuration;
 using System.Threading.Tasks;
 using System.Net.Http;
 using Newtonsoft.Json;
-using System.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 
 #if !ONPREMISES
 using OfficeDevPnP.Core.Sites;
@@ -133,7 +132,7 @@ namespace Microsoft.SharePoint.Client
                     clientContext.ExecutingWebRequest += appDecorationHandler;
 
                     // DO NOT CHANGE THIS TO EXECUTEQUERYRETRY
-                    clientContext.ExecuteQuery();
+                    clientContext.ExecuteQueryAsync();
 
                     // Remove the app decoration event handler after the executequery
                     clientContext.ExecutingWebRequest -= appDecorationHandler;

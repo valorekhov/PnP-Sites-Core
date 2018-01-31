@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -54,11 +53,15 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.Providers.Xml
 
         public static PnPSerializationScope Current
         {
-            get { return CallContext.LogicalGetData(nameof(PnPSerializationScope)) as PnPSerializationScope; }
+            get {
+                throw new NotImplementedException();
+                //return CallContext.LogicalGetData(nameof(PnPSerializationScope)) as PnPSerializationScope;
+            }
             set
             {
                 System.Configuration.ConfigurationManager.GetSection("system.xml/xmlReader");
-                CallContext.LogicalSetData(nameof(PnPSerializationScope), value);
+                throw new NotImplementedException();
+                //CallContext.LogicalSetData(nameof(PnPSerializationScope), value);
             }
         }
     }

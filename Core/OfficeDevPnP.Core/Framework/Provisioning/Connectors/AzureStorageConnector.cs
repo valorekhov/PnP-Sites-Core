@@ -89,7 +89,8 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.Connectors
 
             CloudBlobContainer blobContainer = blobClient.GetContainerReference(container);
 
-            foreach (IListBlobItem item in blobContainer.ListBlobs(prefix, false))
+            //TODO: FIXME
+            foreach (IListBlobItem item in blobContainer.ListBlobsSegmentedAsync(prefix, false, BlobListingDetails.All, null, null, new BlobRequestOptions(), new OperationContext()).Result.Results)
             {
                 if (item.GetType() == typeof(CloudBlockBlob))
                 {
@@ -137,7 +138,8 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.Connectors
 
             CloudBlobContainer blobContainer = blobClient.GetContainerReference(container);
 
-            foreach (IListBlobItem item in blobContainer.ListBlobs(prefix, false))
+            //TODO: FIXME
+            foreach (IListBlobItem item in blobContainer.ListBlobsSegmentedAsync(prefix, false, BlobListingDetails.All, null, null, new BlobRequestOptions(), new OperationContext()).Result.Results)
             {
                 if (item.GetType() == typeof(CloudBlobDirectory))
                 {
@@ -283,11 +285,11 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.Connectors
                 CloudBlobContainer blobContainer = blobClient.GetContainerReference(container);
 
                 // Create the container if it doesn't already exist.
-                blobContainer.CreateIfNotExists();
+                var res = blobContainer.CreateIfNotExistsAsync().Result;
 
                 CloudBlockBlob blockBlob = blobContainer.GetBlockBlobReference(fileName);
 
-                blockBlob.UploadFromStream(stream);
+                blockBlob.UploadFromStreamAsync(stream).RunSynchronously();
                 Log.Info(Constants.LOGGING_SOURCE, CoreResources.Provisioning_Connectors_Azure_FileSaved, fileName, container);
             }
             catch (Exception ex)
@@ -334,9 +336,8 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.Connectors
                 CloudBlobContainer blobContainer = blobClient.GetContainerReference(container);
                 CloudBlockBlob blockBlob = blobContainer.GetBlockBlobReference(fileName);
 
-                if (blockBlob.Exists())
+                if (blockBlob.DeleteIfExistsAsync().Result)
                 {
-                    blockBlob.Delete();
                     Log.Info(Constants.LOGGING_SOURCE, CoreResources.Provisioning_Connectors_Azure_FileDeleted, fileName, container);
                 }
                 else
@@ -397,7 +398,7 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.Connectors
                 CloudBlockBlob blockBlob = blobContainer.GetBlockBlobReference(fileName);
 
                 MemoryStream result = new MemoryStream();
-                blockBlob.DownloadToStream(result);
+                blockBlob.DownloadToStreamAsync(result).RunSynchronously();
                 result.Position = 0;
 
                 Log.Info(Constants.LOGGING_SOURCE, CoreResources.Provisioning_Connectors_Azure_FileRetrieved, fileName, container);

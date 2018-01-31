@@ -1,7 +1,6 @@
 ﻿using OfficeDevPnP.Core.IdentityModel.WSTrustBindings;
 using System;
-using System.IdentityModel.Protocols.WSTrust;
-using System.IdentityModel.Tokens;
+//using System.IdentityModel.Protocols.WSTrust;
 using System.Net;
 using System.ServiceModel;
 using System.ServiceModel.Security;
@@ -57,6 +56,7 @@ namespace OfficeDevPnP.Core.IdentityModel.TokenProviders.ADFS
             return cc;
         }
 
+        /*
         private GenericXmlSecurityToken RequestToken(string userName, string passWord, Uri userNameMixed, string relyingPartyIdentifier)
         {
             GenericXmlSecurityToken genericToken = null;
@@ -80,6 +80,6 @@ namespace OfficeDevPnP.Core.IdentityModel.TokenProviders.ADFS
             }
             return genericToken;
         }
-
+        */
     }
 }

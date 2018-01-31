@@ -5,7 +5,6 @@ using System;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Web.UI;
 
 namespace OfficeDevPnP.Core.Pages
 {
@@ -449,7 +448,7 @@ namespace OfficeDevPnP.Core.Pages
             jsonControlData = JsonConvert.SerializeObject(controlData);
 
             StringBuilder html = new StringBuilder(100);
-            using (var htmlWriter = new HtmlTextWriter(new System.IO.StringWriter(html), ""))
+            /*using (var htmlWriter = new HtmlTextWriter(new System.IO.StringWriter(html), ""))
             {
                 htmlWriter.NewLine = string.Empty;
 
@@ -467,7 +466,7 @@ namespace OfficeDevPnP.Core.Pages
 
                 htmlWriter.RenderEndTag();
                 htmlWriter.RenderEndTag();
-            }
+            }*/
 
             return html.ToString();
         }
@@ -784,7 +783,7 @@ namespace OfficeDevPnP.Core.Pages
             this.jsonWebPartData = jsonWebPartData.Replace("\"jsonPropsToReplacePnPRules\"", this.Properties.ToString(Formatting.None));
 
             StringBuilder html = new StringBuilder(100);
-            var htmlWriter = new HtmlTextWriter(new System.IO.StringWriter(html), "");
+            /*var htmlWriter = new HtmlTextWriter(new System.IO.StringWriter(html), "");
             try
             { 
                 htmlWriter.NewLine = string.Empty;
@@ -818,7 +817,7 @@ namespace OfficeDevPnP.Core.Pages
                 {
                     htmlWriter.Dispose();
                 }
-            }
+            }*/
 
             return html.ToString();
         }
@@ -827,7 +826,7 @@ namespace OfficeDevPnP.Core.Pages
         /// Overrideable method that allows inheriting webparts to control the HTML rendering
         /// </summary>
         /// <param name="htmlWriter">Reference to the html renderer used</param>
-        protected virtual void RenderHtmlProperties(ref HtmlTextWriter htmlWriter)
+       /* protected virtual void RenderHtmlProperties(ref HtmlTextWriter htmlWriter)
         {
             if (this.ServerProcessedContent != null)
             {
@@ -872,7 +871,7 @@ namespace OfficeDevPnP.Core.Pages
             {
                 htmlWriter.Write(this.HtmlPropertiesData);
             }
-        }
+        }*/
         #endregion
 
         #region Internal and private methods

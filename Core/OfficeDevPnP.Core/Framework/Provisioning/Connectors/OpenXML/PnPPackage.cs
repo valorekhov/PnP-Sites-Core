@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO.Packaging;
 using System.IO;
-using System.Xaml;
+//using System.Xaml;
 using OfficeDevPnP.Core.Framework.Provisioning.Connectors.OpenXML.Model;
 
 namespace OfficeDevPnP.Core.Framework.Provisioning.Connectors.OpenXML
@@ -321,7 +321,8 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.Connectors.OpenXML
             {
                 if (stream.Length == 0)
                     return null;
-                obj = (T)XamlServices.Load(stream);
+                throw new NotImplementedException();
+                //obj = (T)XamlServices.Load(stream);
             }
             return obj;
         }
@@ -333,7 +334,9 @@ namespace OfficeDevPnP.Core.Framework.Provisioning.Connectors.OpenXML
 
             using (Stream stream = part.GetStream(FileMode.Create))
             {
-                string partStr = XamlServices.Save(value);
+                throw new NotImplementedException();
+
+                string partStr = null; // XamlServices.Save(value);
                 using (stream)
                 {
                     using (StreamWriter writer = new StreamWriter(stream))

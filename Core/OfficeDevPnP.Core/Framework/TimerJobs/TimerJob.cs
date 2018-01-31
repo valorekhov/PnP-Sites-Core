@@ -5,7 +5,6 @@ using System.Net;
 using System.Reflection;
 using System.Security;
 using System.Threading;
-using System.Web.Script.Serialization;
 using Microsoft.Online.SharePoint.TenantAdministration;
 using Microsoft.SharePoint.Client;
 using OfficeDevPnP.Core.Framework.TimerJobs.Enums;

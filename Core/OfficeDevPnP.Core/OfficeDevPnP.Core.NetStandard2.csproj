@@ -1,0 +1,204 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyVersion>2.22.1801.0</AssemblyVersion>
+    <FileVersion>2.22.1801.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Web References\**" />
+    <EmbeddedResource Remove="Web References\**" />
+    <None Remove="Web References\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Extensions\Deprecated\InformationManagementExtensions.deprecated.cs" />
+    <Compile Remove="Extensions\Deprecated\SecurityExtensions.deprecated.cs" />
+    <Compile Remove="Extensions\Deprecated\TenantExtensions.deprecated.cs" />
+    <Compile Remove="Extensions\InformationManagementExtensions.cs" />
+    <Compile Remove="Extensions\SecurityExtensions.cs" />
+    <Compile Remove="Extensions\TenantExtensions.cs" />
+    <Compile Remove="Framework\TimerJobs\TimerJob.cs" />
+    <Compile Remove="IdentityModel\TokenProviders\ADFS\BaseProvider.cs" />
+    <Compile Remove="IdentityModel\TokenProviders\ADFS\CertificateMixed.cs" />
+    <Compile Remove="IdentityModel\TokenProviders\ADFS\UsernameMixed.cs" />
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+    <Compile Remove="Utilities\TokenHelper.cs" />
+    <Compile Remove="WebAPI\WebAPIContextFilterAttribute.cs" />
+    <Compile Remove="WebAPI\WebAPIHelper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Framework\Provisioning\BaseTemplates\v16_0\BDR0Template.xml" />
+    <Content Include="Framework\Provisioning\BaseTemplates\v16_0\BICENTERSITE0Template.xml" />
+    <Content Include="Framework\Provisioning\BaseTemplates\v16_0\BLOG0Template.xml" />
+    <Content Include="Framework\Provisioning\BaseTemplates\v16_0\CMSPUBLISHING0Template.xml" />
+    <Content Include="Framework\Provisioning\BaseTemplates\v16_0\COMMUNITYPORTAL0Template.xml" />
+    <Content Include="Framework\Provisioning\BaseTemplates\v16_0\OFFILE1Template.xml" />
+    <Content Include="Framework\Provisioning\BaseTemplates\v16_0\PROJECTSITE0Template.xml" />
+    <Content Include="Framework\Provisioning\BaseTemplates\v16_0\SRCHCENTERLITE0Template.xml" />
+    <Content Include="Framework\Provisioning\BaseTemplates\v16_0\STS1Template.xml" />
+    <Content Include="Framework\Provisioning\BaseTemplates\v16_0\VISPRUS0Template.xml" />
+    <Content Include="pnp.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\Common\Publishing-Feature-Native-Files.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v15_0\BDR0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v15_0\BICENTERSITE0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v15_0\BLANKINTERNET0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v15_0\BLOG0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v15_0\CMSPUBLISHING0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v15_0\COMMUNITY0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v15_0\COMMUNITYPORTAL0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v15_0\DEV0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v15_0\ENTERWIKI0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v15_0\OFFILE1Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v15_0\PROJECTSITE0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v15_0\SRCHCEN0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v15_0\SRCHCENTERLITE0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v15_0\STS0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v15_0\STS1Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v15_0\VISPRUS0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_0\BLANKINTERNET0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_0\COMMUNITY0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_0\DEV0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_0\ENTERWIKI0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_0\SRCHCEN0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_0\STS0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_1\BDR0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_1\BICENTERSITE0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_1\BLANKINTERNET0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_1\BLOG0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_1\CMSPUBLISHING0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_1\COMMUNITY0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_1\COMMUNITYPORTAL0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_1\DEV0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_1\EHS1Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_1\ENTERWIKI0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_1\GROUP0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_1\OFFILE1Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_1\PROJECTSITE0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_1\SITEPAGEPUBLISHING0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_1\SRCHCEN0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_1\SRCHCENTERLITE0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_1\STS0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\BaseTemplates\v16_1\VISPRUS0Template.xml" />
+    <EmbeddedResource Include="Framework\Provisioning\Providers\Xml\ProvisioningSchema-2015-03.xsd" />
+    <EmbeddedResource Include="Framework\Provisioning\Providers\Xml\ProvisioningSchema-2015-05.xsd" />
+    <EmbeddedResource Include="Framework\Provisioning\Providers\Xml\ProvisioningSchema-2015-08.xsd" />
+    <EmbeddedResource Include="Framework\Provisioning\Providers\Xml\ProvisioningSchema-2015-12.xsd" />
+    <EmbeddedResource Include="Framework\Provisioning\Providers\Xml\ProvisioningSchema-2016-05.xsd" />
+    <EmbeddedResource Include="Framework\Provisioning\Providers\Xml\ProvisioningSchema-2017-05.xsd" />
+    <EmbeddedResource Include="Framework\Provisioning\Providers\Xml\ProvisioningSchema-2018-01.xsd" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Framework\Provisioning\Deprecated\Connectors\OpenXML\" />
+    <Folder Include="Utilities\Graph\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Extensions\Deprecated\InformationManagementExtensions.deprecated.cs" />
+    <None Include="Extensions\Deprecated\SecurityExtensions.deprecated.cs" />
+    <None Include="Extensions\InformationManagementExtensions.cs" />
+    <None Include="Extensions\SecurityExtensions.cs" />
+    <None Include="Extensions\TenantExtensions.cs" />
+    <None Include="Framework\TimerJobs\TimerJob.cs" />
+    <None Include="IdentityModel\TokenProviders\ADFS\BaseProvider.cs" />
+    <None Include="IdentityModel\TokenProviders\ADFS\CertificateMixed.cs" />
+    <None Include="IdentityModel\TokenProviders\ADFS\UsernameMixed.cs" />
+    <None Include="Properties\AssemblyInfo.cs" />
+    <None Include="Utilities\TokenHelper.cs" />
+    <None Include="WebAPI\WebAPIContextFilterAttribute.cs" />
+    <None Include="WebAPI\WebAPIHelper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AngleSharp" Version="0.9.9.1" />
+    <PackageReference Include="Microsoft.Graph" Version="1.7.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="2.29.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="SharePointPnP.IdentityModel.Extensions" Version="1.2.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0-preview1-25914-04" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.0" />
+    <PackageReference Include="System.IO.Packaging" Version="4.5.0-preview1-25914-04" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.5.0-preview1-25914-04" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.4.1" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.4.1" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.4.1" />
+    <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
+    <PackageReference Include="WindowsAzure.Storage" Version="8.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Online.SharePoint.Client.Tenant">
+      <HintPath>..\..\Assemblies\16.1\Microsoft.Online.SharePoint.Client.Tenant.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.DocumentManagement.Portable">
+      <HintPath>..\..\Assemblies\16.1-netcore45\Microsoft.SharePoint.Client.DocumentManagement.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Portable">
+      <HintPath>..\..\Assemblies\16.1-netcore45\Microsoft.SharePoint.Client.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Sharepoint.Client.Publishing.Portable">
+      <HintPath>..\..\Assemblies\16.1-netcore45\Microsoft.SharePoint.Client.Publishing.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime.Portable">
+      <HintPath>..\..\Assemblies\16.1-netcore45\Microsoft.SharePoint.Client.Runtime.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Search.Applications.Portable">
+      <HintPath>..\..\Assemblies\16.1-netcore45\Microsoft.SharePoint.Client.Search.Applications.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Search.Portable">
+      <HintPath>..\..\Assemblies\16.1-netcore45\Microsoft.SharePoint.Client.Search.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Taxonomy.Portable">
+      <HintPath>..\..\Assemblies\16.1-netcore45\Microsoft.SharePoint.Client.Taxonomy.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.UserProfiles.Portable">
+      <HintPath>..\..\Assemblies\16.1-netcore45\Microsoft.SharePoint.Client.UserProfiles.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.WorkflowServices.Portable">
+      <HintPath>..\..\Assemblies\16.1-netcore45\Microsoft.SharePoint.Client.WorkflowServices.Portable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="CoreResources.Designer.cs">
+      <DependentUpon>CoreResources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Framework\Provisioning\Providers\Xml\ProvisioningSchema-2015-03.cs">
+      <DependentUpon>ProvisioningSchema-2015-03.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Framework\Provisioning\Providers\Xml\ProvisioningSchema-2015-05.cs">
+      <DependentUpon>ProvisioningSchema-2015-05.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Framework\Provisioning\Providers\Xml\ProvisioningSchema-2015-08.cs">
+      <DependentUpon>ProvisioningSchema-2015-08.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Framework\Provisioning\Providers\Xml\ProvisioningSchema-2015-12.cs">
+      <DependentUpon>ProvisioningSchema-2015-12.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Framework\Provisioning\Providers\Xml\ProvisioningSchema-2016-05.cs">
+      <DependentUpon>ProvisioningSchema-2016-05.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Framework\Provisioning\Providers\Xml\ProvisioningSchema-2017-05.cs">
+      <DependentUpon>ProvisioningSchema-2017-05.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Framework\Provisioning\Providers\Xml\ProvisioningSchema-2018-01.cs">
+      <DependentUpon>ProvisioningSchema-2018-01.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="CoreResources.resx">
+      <LastGenOutput>CoreResources.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
